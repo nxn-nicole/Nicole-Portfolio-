@@ -81,14 +81,14 @@ export default function MemphisCard({
           style={{ transform: "rotateY(180deg)" }}
         >
           <div
-            className="flex h-full w-full items-center justify-center rounded-3xl p-10"
+            className="flex h-full w-full items-center justify-center rounded-3xl"
             style={{ backgroundColor }}
           >
             <Image
               src={backImageSrc}
               alt={`${title} back illustration`}
-              width={320}
-              height={320}
+              width={400}
+              height={560}
               className="h-auto max-h-full w-auto max-w-full object-contain"
             />
           </div>
