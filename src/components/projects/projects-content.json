@@ -14,37 +14,43 @@
       "title": "AI Task Generation",
       "description": "Speak or write anything — BlotzTask breaks it down into actionable tasks automatically.",
       "backgroundColor": "#B6DA6D",
-      "illustration": "blobBlue"
+      "illustration": "blobBlue",
+      "backIllustration": "blobOrange"
     },
     {
       "title": "AI Task Breakdown",
       "description": "Use AI to break complex tasks into simple, manageable steps.",
       "backgroundColor": "#FFD978",
-      "illustration": "blobPurple"
+      "illustration": "blobPurple",
+      "backIllustration": "blobBlue"
     },
     {
       "title": "Deadline",
       "description": "Set important tasks as deadlines so urgent work stays visible and on track.",
       "backgroundColor": "#FFB8C9",
-      "illustration": "blobOrange"
+      "illustration": "blobOrange",
+      "backIllustration": "blobPurple"
     },
     {
       "title": "Gacha Machine",
       "description": "When you do not know what to do next, spin the gacha machine to get something you can work on.",
       "backgroundColor": "#9FE3D2",
-      "illustration": "blobBlue"
+      "illustration": "blobBlue",
+      "backIllustration": "blobPurple"
     },
     {
       "title": "Real-time Sync",
       "description": "Stay in sync with your team — tasks update instantly across all devices.",
       "backgroundColor": "#BDD2FE",
-      "illustration": "blobOrange"
+      "illustration": "blobOrange",
+      "backIllustration": "blobBlue"
     },
     {
       "title": "Smart Reminders",
       "description": "Never miss a deadline — BlotzTask nudges you at just the right moment.",
       "backgroundColor": "#C8BBD4",
-      "illustration": "blobPurple"
+      "illustration": "blobPurple",
+      "backIllustration": "blobOrange"
     }
   ]
 }
