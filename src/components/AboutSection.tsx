@@ -80,7 +80,7 @@ const experience: ExperienceItem[] = [
     period: "Ongoing",
     summary:
       "Building playful interactions, experiments, and portfolio pieces that mix UI craft with code.",
-    shadowColor: "rgba(130, 131, 188)",
+    shadowColor: "rgba(243, 190, 52)",
   },
 ];
 
@@ -97,13 +97,12 @@ export default function AboutSection() {
             <h2 className="font-dongle text-6xl leading-none text-zinc-900 dark:text-zinc-50 sm:text-7xl">
               Links, skills, and experience.
             </h2>
-            <p className="mt-4 text-lg leading-9 text-zinc-700 dark:text-zinc-300">
-              Software developer with 2 years of hands-on experience building
-              and shipping full-stack web and mobile applications. Specialising
-              in .NET, React (React Native), Next.js, and Node.js, with
-              practical experience integrating AI and LLM-powered features into
-              production systems. Experienced in CI/CD pipelines and cloud-based
-              deployment.
+            <p className="font-short-stack mt-4 text-lg leading-9 text-zinc-700 dark:text-zinc-300">
+              2 years of hands-on experience building and shipping full-stack
+              web and mobile applications. Specialising in .NET, React (React
+              Native), Next.js, and Node.js, with practical experience
+              integrating AI and LLM-powered features into production systems.
+              Experienced in CI/CD pipelines and cloud-based deployment.
             </p>
           </div>
 
@@ -131,26 +130,16 @@ export default function AboutSection() {
                 <h3 className="font-dongle text-5xl leading-none text-zinc-900 dark:text-zinc-50">
                   Skills
                 </h3>
-                <div className="mt-5 grid gap-4">
+                <div className="mt-5 flex flex-wrap gap-4">
                   {skillGroups.map((group) => (
-                    <section
+                    <div
                       key={group.title}
-                      className="rounded-[28px] border-2 border-zinc-900 bg-white/80 p-5 dark:border-zinc-100 dark:bg-zinc-950/70"
+                      className="inline-flex w-fit max-w-full rounded-2xl border-2 border-zinc-900 bg-white px-4 py-3 dark:border-zinc-100 dark:bg-zinc-950"
                     >
-                      <h4 className="font-short-stack text-sm uppercase tracking-[0.16em] text-zinc-500 dark:text-zinc-400">
+                      <p className="font-short-stack whitespace-nowrap text-sm text-zinc-900 dark:text-zinc-100">
                         {group.title}
-                      </h4>
-                      <div className="mt-4 flex flex-wrap gap-3">
-                        {group.items.map((skill) => (
-                          <span
-                            key={`${group.title}-${skill}`}
-                            className="rounded-full border-2 border-zinc-900 px-4 py-2 font-short-stack text-sm text-zinc-900 dark:border-zinc-100 dark:text-zinc-100"
-                          >
-                            {skill}
-                          </span>
-                        ))}
-                      </div>
-                    </section>
+                      </p>
+                    </div>
                   ))}
                 </div>
               </div>
