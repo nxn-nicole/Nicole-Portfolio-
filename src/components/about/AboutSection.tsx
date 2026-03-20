@@ -3,6 +3,7 @@ import aboutContent from "./about-content.json";
 import AboutLinks from "./AboutLinks";
 import AboutSkills, { type CardRect, type SkillGroup } from "./AboutSkills";
 import AboutExperienceCard from "./AboutExperienceCard";
+import StickyNote from "../shared/StickyNote";
 
 export default function AboutSection({
   selectedSkill,
@@ -108,6 +109,42 @@ export default function AboutSection({
           </div>
         </div>
       ) : null}
+
+      <StickyNote
+        text="2 years of experience"
+        textSize={16}
+        initialX={50}
+        initialY={1200}
+        color="#b8ffbf"
+        rotate={3}
+      />
+
+      <StickyNote
+        text="Agile & Scrum"
+        textSize={16}
+        initialX={240}
+        initialY={1250}
+        color="#79EDFF"
+        rotate={-8}
+      />
+
+      <StickyNote
+        text="University of Melbourne"
+        textSize={16}
+        initialX={240}
+        initialY={1400}
+        color="#FF9EA2"
+        rotate={0}
+      />
+
+      <StickyNote
+        text="🥘 Cooking & 🐱 Cat person"
+        textSize={16}
+        initialX={60}
+        initialY={1480}
+        color="#FFE69A"
+        rotate={-2}
+      />
     </section>
   );
 }
