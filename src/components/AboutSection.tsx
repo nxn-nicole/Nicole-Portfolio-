@@ -64,7 +64,7 @@ const experience: ExperienceItem[] = [
     period: "2022 - Present",
     summary:
       "Shaping polished product experiences, motion systems, and visual direction for web-first launches.",
-    shadowColor: "rgba(244, 114, 182, 0.18)",
+    shadowColor: "rgba(246, 157, 200)",
   },
   {
     company: "Startups",
@@ -72,7 +72,7 @@ const experience: ExperienceItem[] = [
     period: "5+ years",
     summary:
       "Worked across early-stage teams translating rough ideas into shippable interfaces and branded systems.",
-    shadowColor: "rgba(134, 239, 172, 0.22)",
+    shadowColor: "rgba(162, 210, 239)",
   },
   {
     company: "Independent",
@@ -80,7 +80,7 @@ const experience: ExperienceItem[] = [
     period: "Ongoing",
     summary:
       "Building playful interactions, experiments, and portfolio pieces that mix UI craft with code.",
-    shadowColor: "rgba(125, 211, 252, 0.22)",
+    shadowColor: "rgba(130, 131, 188)",
   },
 ];
 
