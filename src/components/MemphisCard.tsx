@@ -14,7 +14,7 @@ export default function MemphisCard({
   return (
     <div className="flex flex-col rounded-3xl overflow-hidden w-80 shrink-0 bg-zinc-100 dark:bg-zinc-900">
       {/* Text area */}
-      <div className="px-6 pt-6 pb-4">
+      <div className="px-6 pt-6 pb-4 h-60">
         <h3 className="font-dongle text-5xl font-bold text-zinc-900 dark:text-zinc-50 leading-tight mb-2">
           {title}
         </h3>
@@ -25,7 +25,7 @@ export default function MemphisCard({
 
       {/* Illustration area */}
       <div
-        className="flex items-center justify-center rounded-3xl py-10 h-80"
+        className="flex rounded-3xl py-10 h-80 items-center justify-center"
         style={{ backgroundColor }}
       >
         {illustration}

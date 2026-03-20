@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import ProjectCard from "./ProjectCard";
 import RoughLine from "./RoughLine";
 import MemphisCard from "../MemphisCard";
@@ -16,7 +19,66 @@ const projects = [
   },
 ];
 
+const memphisCards = [
+  {
+    title: "AI Task Generation",
+    description:
+      "Speak or write anything — BlotzTask breaks it down into actionable tasks automatically.",
+    backgroundColor: "#B6DA6D",
+    illustration: <BlobBlue size={200} />,
+  },
+  {
+    title: "Real-time Sync",
+    description:
+      "Stay in sync with your team — tasks update instantly across all devices.",
+    backgroundColor: "#BDD2FE",
+    illustration: <BlobOrange size={200} />,
+  },
+  {
+    title: "Smart Reminders",
+    description:
+      "Never miss a deadline — BlotzTask nudges you at just the right moment.",
+    backgroundColor: "#C8BBD4",
+    illustration: <BlobPurple size={200} />,
+  },
+];
+
+// Duplicate for seamless infinite loop
+const loopedCards = [...memphisCards, ...memphisCards];
+
+const CARD_WIDTH = 220;
+const CARD_GAP = 16;
+const CARD_STEP = CARD_WIDTH + CARD_GAP;
+const TOTAL_ORIGINAL_WIDTH = CARD_STEP * memphisCards.length;
+
 export default function ProjectsSection() {
+  const trackRef = useRef<HTMLDivElement>(null);
+  const offsetRef = useRef(0);
+  const rafRef = useRef<number | null>(null);
+  const pausedRef = useRef(false);
+
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return;
+
+    const animate = () => {
+      if (!pausedRef.current) {
+        offsetRef.current += 0.5;
+        // Seamless jump: when first set fully scrolled off, reset to start
+        if (offsetRef.current >= TOTAL_ORIGINAL_WIDTH) {
+          offsetRef.current -= TOTAL_ORIGINAL_WIDTH;
+        }
+        track.style.transform = `translateX(-${offsetRef.current}px)`;
+      }
+      rafRef.current = requestAnimationFrame(animate);
+    };
+
+    rafRef.current = requestAnimationFrame(animate);
+    return () => {
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    };
+  }, []);
+
   return (
     <section className="w-full py-24 px-8">
       {/* Section Title */}
@@ -28,30 +90,42 @@ export default function ProjectsSection() {
         <RoughLine width={60} height={18} strokeWidth={2.5} />
       </div>
 
-      {/* Project Cards */}
-      <div className="flex gap-6 overflow-x-auto pb-4 max-w-6xl mx-auto">
-        {projects.map((project) => (
-          <ProjectCard key={project.title} {...project} />
-        ))}
-        <MemphisCard
-          title="AI Task Generation"
-          description="Speak or write anything — BlotzTask breaks it down into actionable tasks automatically."
-          backgroundColor="#B6DA6D"
-          illustration={<BlobBlue size={200} />}
-        />
-        <MemphisCard
-          title="AI Task Generation"
-          description="Speak or write anything — BlotzTask breaks it down into actionable tasks automatically."
-          backgroundColor="#BDD2FE"
-          illustration={<BlobOrange size={200} />}
-        />
+      <div className="flex flex-row w-full">
+        {/* Static project cards */}
+        <div className="flex gap-6 mx-10">
+          {projects.map((project) => (
+            <ProjectCard key={project.title} {...project} />
+          ))}
+        </div>
 
-        <MemphisCard
-          title="AI Task Generation"
-          description="Speak or write anything — BlotzTask breaks it down into actionable tasks automatically."
-          backgroundColor="#C8BBD4"
-          illustration={<BlobPurple size={200} />}
-        />
+        {/* Carousel — overflow hidden kills the scrollbar */}
+        <div
+          className="overflow-hidden"
+          style={{ width: `${CARD_STEP * 3 + CARD_GAP}px` }}
+          onMouseEnter={() => {
+            pausedRef.current = true;
+          }}
+          onMouseLeave={() => {
+            pausedRef.current = false;
+          }}
+        >
+          <div
+            ref={trackRef}
+            className="flex"
+            style={{ gap: `${CARD_GAP}px`, willChange: "transform" }}
+          >
+            {loopedCards.map((card, index) => (
+              <div key={index} style={{ minWidth: CARD_WIDTH, flexShrink: 0 }}>
+                <MemphisCard
+                  title={card.title}
+                  description={card.description}
+                  backgroundColor={card.backgroundColor}
+                  illustration={card.illustration}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
