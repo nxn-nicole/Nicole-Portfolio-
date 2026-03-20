@@ -16,13 +16,11 @@ export default function AboutSkills({
   title,
   skillGroups,
   activeTitle,
-  isClosing,
   onOpen,
 }: {
   title: string;
   skillGroups: SkillGroup[];
   activeTitle: string | null;
-  isClosing: boolean;
   onOpen: (event: React.MouseEvent<HTMLDivElement>, group: SkillGroup) => void;
 }) {
   return (
@@ -37,7 +35,7 @@ export default function AboutSkills({
             key={group.title}
             onClick={(event) => onOpen(event, group)}
             className={`inline-flex w-fit cursor-pointer select-none rounded-2xl border-2 border-zinc-900 bg-white px-4 py-3 transition-opacity duration-200 hover:bg-zinc-50 dark:border-zinc-100 dark:bg-zinc-950 dark:hover:bg-zinc-900 ${
-              activeTitle === group.title && !isClosing
+              activeTitle === group.title
                 ? "pointer-events-none opacity-0"
                 : "opacity-100"
             }`}

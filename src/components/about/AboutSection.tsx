@@ -10,14 +10,12 @@ export default function AboutSection({
   skillOriginRect,
   skillFlyingStyle,
   activeSkillTitle,
-  isClosingSkillOverlay,
   onOpenSkill,
 }: {
   selectedSkill: SkillGroup | null;
   skillOriginRect: CardRect | null;
   skillFlyingStyle: React.CSSProperties;
   activeSkillTitle: string | null;
-  isClosingSkillOverlay: boolean;
   onOpenSkill: (
     event: React.MouseEvent<HTMLDivElement>,
     group: SkillGroup,
@@ -65,7 +63,6 @@ export default function AboutSection({
                   title={aboutContent.skillsTitle}
                   skillGroups={aboutContent.skillGroups}
                   activeTitle={activeSkillTitle}
-                  isClosing={isClosingSkillOverlay}
                   onOpen={onOpenSkill}
                 />
                 <div>

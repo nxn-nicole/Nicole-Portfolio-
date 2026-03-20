@@ -86,7 +86,6 @@ export default function Home() {
           skillOriginRect={originRect}
           skillFlyingStyle={flyingStyle}
           activeSkillTitle={selectedSkill?.title ?? null}
-          isClosingSkillOverlay={isClosingSkillOverlay}
           onOpenSkill={handleOpenSkill}
         />
         <ProjectsSection />
