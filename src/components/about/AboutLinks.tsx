@@ -9,14 +9,16 @@ export default function AboutLinks({
   title,
   links,
 }: {
-  title: string;
+  title?: string;
   links: AboutLink[];
 }) {
   return (
     <div>
-      <h3 className="font-dongle text-5xl leading-none text-zinc-900 dark:text-zinc-50">
-        {title}
-      </h3>
+      {title ? (
+        <h3 className="font-dongle text-5xl leading-none text-zinc-900 dark:text-zinc-50">
+          {title}
+        </h3>
+      ) : null}
       <div className="mt-5 flex flex-wrap gap-4">
         {links.map((link) => (
           <a

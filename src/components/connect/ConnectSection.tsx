@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import content from "./connection-content.json";
+import aboutContent from "@/components/about/about-content.json";
+import AboutLinks from "@/components/about/AboutLinks";
 import RoughLine from "@/components/projects/RoughLine";
 
 export default function ConnectSection() {
@@ -35,8 +37,13 @@ export default function ConnectSection() {
           {content.email}
         </a>
 
+        <AboutLinks links={aboutContent.links} />
+
         {/* Contact Form */}
-        <form onSubmit={handleSubmit} className="w-full flex flex-col gap-4">
+        <form
+          onSubmit={handleSubmit}
+          className="w-full flex flex-col gap-4 mt-4"
+        >
           <div className="flex gap-4">
             <input
               type="text"
