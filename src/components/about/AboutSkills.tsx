@@ -4,14 +4,16 @@ type SkillGroup = {
 };
 
 export default function AboutSkills({
+  title,
   skillGroups,
 }: {
+  title: string;
   skillGroups: SkillGroup[];
 }) {
   return (
     <div>
       <h3 className="font-dongle text-5xl leading-none text-zinc-900 dark:text-zinc-50">
-        Skills
+        {title}
       </h3>
       <div className="mt-5 flex flex-wrap gap-4">
         {skillGroups.map((group) => (

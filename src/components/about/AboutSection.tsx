@@ -1,90 +1,8 @@
 import Image from "next/image";
+import aboutContent from "./about-content.json";
 import AboutLinks from "./AboutLinks";
 import AboutSkills from "./AboutSkills";
 import AboutExperienceCard from "./AboutExperienceCard";
-
-type ExperienceItem = {
-  company: string;
-  role: string;
-  period: string;
-  summary: string;
-  shadowColor: string;
-};
-
-type SkillGroup = {
-  title: string;
-  items: string[];
-};
-
-const skillGroups: SkillGroup[] = [
-  {
-    title: "Front-end development",
-    items: [
-      "Next.js",
-      "React",
-      "React Native",
-      "Expo",
-      "HTML5",
-      "CSS3",
-      "Zustand",
-      "Vite",
-    ],
-  },
-  {
-    title: "Back-end development",
-    items: ["Node.js", ".NET 8", "RESTful API", "Supabase", "Python"],
-  },
-  {
-    title: "Cloud & DevOps",
-    items: [
-      "GitHub Actions",
-      "Azure",
-      "App Service",
-      "App Insights",
-      "OpenAI",
-      "AWS",
-      "Docker",
-    ],
-  },
-  {
-    title: "Others",
-    items: [
-      "MySQL",
-      "MSSQL",
-      "Git",
-      "Auth0",
-      "Posthog",
-      "Relational Database Design",
-    ],
-  },
-];
-
-const experience: ExperienceItem[] = [
-  {
-    company: "Framer",
-    role: "Product Designer",
-    period: "2022 - Present",
-    summary:
-      "Shaping polished product experiences, motion systems, and visual direction for web-first launches.",
-    shadowColor: "rgba(246, 157, 200)",
-  },
-  {
-    company: "Startups",
-    role: "Design + Frontend",
-    period: "5+ years",
-    summary:
-      "Worked across early-stage teams translating rough ideas into shippable interfaces and branded systems.",
-    shadowColor: "rgba(162, 210, 239)",
-  },
-  {
-    company: "Independent",
-    role: "Creative Technologist",
-    period: "Ongoing",
-    summary:
-      "Building playful interactions, experiments, and portfolio pieces that mix UI craft with code.",
-    shadowColor: "rgba(182, 218, 109)",
-  },
-];
 
 export default function AboutSection() {
   return (
@@ -94,8 +12,8 @@ export default function AboutSection() {
           <div className="flex justify-center">
             <div className="overflow-hidden rounded-full border-4 border-black bg-white p-1 dark:border-zinc-100 dark:bg-zinc-950">
               <Image
-                src="/linkedin-photo.jpeg"
-                alt="Nicole profile photo"
+                src={aboutContent.photo.src}
+                alt={aboutContent.photo.alt}
                 width={240}
                 height={240}
                 className="h-48 w-48 rounded-full object-cover sm:h-56 sm:w-56"
@@ -106,32 +24,36 @@ export default function AboutSection() {
 
           <div className="max-w-3xl">
             <p className="font-short-stack text-sm uppercase tracking-[0.24em] text-zinc-500 dark:text-zinc-400">
-              About
+              {aboutContent.sectionLabel}
             </p>
 
             <div className="mt-4 max-w-2xl">
               <h2 className="font-dongle text-6xl leading-none text-zinc-900 dark:text-zinc-50 sm:text-7xl">
-                Links, skills, and experience.
+                {aboutContent.title}
               </h2>
               <p className="font-short-stack mt-4 text-lg leading-9 text-zinc-700 dark:text-zinc-300">
-                I build full-stack web and mobile applications with a focus on
-                intuitive user experiences and AI-powered features. Passionate
-                about turning complex ideas into clean, functional products.
+                {aboutContent.summary}
               </p>
             </div>
 
             <div className="flex flex-row mt-12 gap-10 ">
               <div className="space-y-10">
-                <AboutLinks />
-                <AboutSkills skillGroups={skillGroups} />
+                <AboutLinks
+                  title={aboutContent.linksTitle}
+                  links={aboutContent.links}
+                />
+                <AboutSkills
+                  title={aboutContent.skillsTitle}
+                  skillGroups={aboutContent.skillGroups}
+                />
               </div>
 
               <div>
                 <h3 className="font-dongle text-5xl leading-none text-zinc-900 dark:text-zinc-50">
-                  Experience
+                  {aboutContent.experienceTitle}
                 </h3>
                 <div className="mt-5 space-y-4">
-                  {experience.map((item) => (
+                  {aboutContent.experience.map((item) => (
                     <AboutExperienceCard
                       key={`${item.company}-${item.role}`}
                       {...item}

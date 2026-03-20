@@ -1,4 +1,4 @@
-export default function BlobOrange({ size = 160 }: { size?: number }) {
+export default function BlobPurple({ size = 160 }: { size?: number }) {
   return (
     <svg
       width={size}
@@ -8,20 +8,20 @@ export default function BlobOrange({ size = 160 }: { size?: number }) {
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M275.138 44.9295C328.944 33.3236 380.819 -14.8178 432.348 4.5341C482.333 23.3059 492.893 89.472 518.5 136.324C543.521 182.104 612.509 235.118 581.171 276.829C536.942 335.698 433.659 293.248 371.248 332.318C346.38 347.887 366.306 389.94 356.384 417.551C333.504 481.221 342.129 590.299 275.138 599.771C213.344 608.507 232.436 475.54 179.449 442.567C129.404 411.425 33.7593 484.217 5.93782 432.252C-22.3995 379.324 58.1341 327.256 90.7142 276.829C107.996 250.081 143.265 236.42 152.209 205.856C165.639 159.962 123.72 102.844 152.748 64.8439C178.274 31.4283 234.034 53.7957 275.138 44.9295Z"
         fill="#D9BDE9"
       />
       <path
         d="M174.213 179.066C230.177 154.69 250.909 163.957 272.054 214.678"
         stroke="black"
-        stroke-width="8"
+        strokeWidth="8"
       />
       <path
         d="M333.751 236.306C386.327 205.291 408.034 211.963 435.202 259.728"
         stroke="black"
-        stroke-width="8"
+        strokeWidth="8"
       />
     </svg>
   );

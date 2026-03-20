@@ -1,5 +1,5 @@
 import AboutSection from "@/components/about/AboutSection";
-import ProjectsSection from "@/components/ProjectsSection";
+import ProjectsSection from "@/components/projects/ProjectsSection";
 
 export default function Home() {
   return (

@@ -1,6 +1,6 @@
 import ProjectCard from "./ProjectCard";
 import RoughLine from "./RoughLine";
-import MemphisCard from "./MemphisCard";
+import MemphisCard from "../MemphisCard";
 import BlobBlue from "./icons/BlobBlue";
 import BlobOrange from "./icons/BlobOrange";
 import BlobPurple from "./icons/BlobPurple";

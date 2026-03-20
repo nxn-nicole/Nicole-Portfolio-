@@ -1,0 +1,91 @@
+{
+  "sectionLabel": "About",
+  "title": "Links, skills, and experience.",
+  "summary": "I build full-stack web and mobile applications with a focus on intuitive user experiences and AI-powered features. Passionate about turning complex ideas into clean, functional products.",
+  "photo": {
+    "src": "/linkedin-photo.jpeg",
+    "alt": "Nicole profile photo"
+  },
+  "linksTitle": "Links",
+  "links": [
+    {
+      "label": "GitHub",
+      "href": "https://github.com/nxn-nicole"
+    },
+    {
+      "label": "LinkedIn",
+      "href": "https://www.linkedin.com/in/nicole-nan-501a6831b/"
+    },
+    {
+      "label": "Email",
+      "href": "mailto:nicolenxn1234@gmail.com"
+    }
+  ],
+  "skillsTitle": "Skills",
+  "skillGroups": [
+    {
+      "title": "Front-end development",
+      "items": [
+        "Next.js",
+        "React",
+        "React Native",
+        "Expo",
+        "HTML5",
+        "CSS3",
+        "Zustand",
+        "Vite"
+      ]
+    },
+    {
+      "title": "Back-end development",
+      "items": ["Node.js", ".NET 8", "RESTful API", "Supabase", "Python"]
+    },
+    {
+      "title": "Cloud & DevOps",
+      "items": [
+        "GitHub Actions",
+        "Azure",
+        "App Service",
+        "App Insights",
+        "OpenAI",
+        "AWS",
+        "Docker"
+      ]
+    },
+    {
+      "title": "Others",
+      "items": [
+        "MySQL",
+        "MSSQL",
+        "Git",
+        "Auth0",
+        "Posthog",
+        "Relational Database Design"
+      ]
+    }
+  ],
+  "experienceTitle": "Experience",
+  "experience": [
+    {
+      "company": "BlotzTask",
+      "role": "Full Stack Developer",
+      "period": "Dec 2024 – Present",
+      "summary": "Built an AI-powered productivity app from scratch and leading the full development lifecycle from architecture to production.",
+      "shadowColor": "rgba(246, 157, 200)"
+    },
+    {
+      "company": "Challenz",
+      "role": "Software Engineer",
+      "period": "Aug 2025 – Nov 2025",
+      "summary": "Developed real-time video calling and automated backend workflows for a social app serving live business transactions.",
+      "shadowColor": "rgba(162, 210, 239)"
+    },
+    {
+      "company": "Education Network Group",
+      "role": "Game Developer",
+      "period": "Nov 2024 – Mar 2025",
+      "summary": "Collaborated with psychologists and designers to build WhizKid, a gamified learning app for autistic children.",
+      "shadowColor": "rgba(182, 218, 109)"
+    }
+  ]
+}
