@@ -59,6 +59,7 @@ export default function AboutSection({
                   title={aboutContent.linksTitle}
                   links={aboutContent.links}
                 />
+
                 <AboutSkills
                   title={aboutContent.skillsTitle}
                   skillGroups={aboutContent.skillGroups}
@@ -66,6 +67,15 @@ export default function AboutSection({
                   isClosing={isClosingSkillOverlay}
                   onOpen={onOpenSkill}
                 />
+                <div>
+                  <a
+                    href={aboutContent.resume.href}
+                    download
+                    className="inline-flex items-center py-3 font-short-stack text-lg text-zinc-900 underline underline-offset-4 transition-transform duration-200 hover:-translate-y-1 dark:border-zinc-100 dark:bg-zinc-950 dark:text-zinc-100"
+                  >
+                    {aboutContent.resume.label}
+                  </a>
+                </div>
               </div>
 
               <div>

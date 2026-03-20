@@ -7,6 +7,10 @@
     "alt": "Nicole profile photo"
   },
   "linksTitle": "Links",
+  "resume": {
+    "label": "Download Resume",
+    "href": "/Resume.pdf"
+  },
   "links": [
     {
       "label": "GitHub",
