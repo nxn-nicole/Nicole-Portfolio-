@@ -33,21 +33,18 @@ export default function ProjectsSection() {
   const trackRef = useRef<HTMLDivElement>(null);
   const offsetRef = useRef(0);
   const rafRef = useRef<number | null>(null);
-  const pausedRef = useRef(false);
 
   useEffect(() => {
     const track = trackRef.current;
     if (!track) return;
 
     const animate = () => {
-      if (!pausedRef.current) {
-        offsetRef.current += 0.5;
-        // Seamless jump: when first set fully scrolled off, reset to start
-        if (offsetRef.current >= TOTAL_ORIGINAL_WIDTH) {
-          offsetRef.current -= TOTAL_ORIGINAL_WIDTH;
-        }
-        track.style.transform = `translateX(-${offsetRef.current}px)`;
+      offsetRef.current += 0.5;
+      // Seamless jump: when first set fully scrolled off, reset to start
+      if (offsetRef.current >= TOTAL_ORIGINAL_WIDTH) {
+        offsetRef.current -= TOTAL_ORIGINAL_WIDTH;
       }
+      track.style.transform = `translateX(-${offsetRef.current}px)`;
       rafRef.current = requestAnimationFrame(animate);
     };
 
@@ -80,12 +77,6 @@ export default function ProjectsSection() {
         <div
           className="overflow-hidden"
           style={{ width: `${CARD_STEP * 4 + CARD_GAP}px` }}
-          onMouseEnter={() => {
-            pausedRef.current = true;
-          }}
-          onMouseLeave={() => {
-            pausedRef.current = false;
-          }}
         >
           <div
             ref={trackRef}
