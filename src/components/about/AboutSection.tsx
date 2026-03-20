@@ -99,7 +99,7 @@ export default function AboutSection({
 
       {selectedSkill && skillOriginRect ? (
         <div
-          className="z-50 overflow-hidden rounded-2xl border-2 border-zinc-900 bg-white dark:border-zinc-100 dark:bg-zinc-950"
+          className="z-50 rounded-2xl border-2 border-zinc-900 bg-white dark:border-zinc-100 dark:bg-zinc-950"
           style={skillFlyingStyle}
         >
           <div className="flex w-fit items-center justify-between px-4 pt-3 pb-2">

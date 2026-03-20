@@ -64,7 +64,7 @@ export default function Home() {
     position: "fixed",
     top: "50%",
     left: "50%",
-    width: "min(360px, 90vw)",
+    width: "fit-content",
     height: "auto",
     transform: "translate(-50%, -50%)",
   };
