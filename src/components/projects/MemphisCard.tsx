@@ -89,6 +89,7 @@ export default function MemphisCard({
               alt={`${title} back illustration`}
               width={400}
               height={560}
+              style={{ width: "auto", height: "auto" }}
               className="h-auto max-h-full w-auto max-w-full object-contain"
             />
           </div>

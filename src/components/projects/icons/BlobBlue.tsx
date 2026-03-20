@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 export default function BlobBlue({ size = 160 }: { size?: number }) {
   return (
     <svg
@@ -23,6 +25,26 @@ export default function BlobBlue({ size = 160 }: { size?: number }) {
         stroke="black"
         strokeWidth="8"
       />
+      <motion.g
+        animate={{ rotate: [-30, 30, -30] }}
+        transition={{
+          duration: 1.5,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        style={{ transformOrigin: "117.269px 74.341px" }}
+      >
+        <path
+          d="M30.2979 4C44.7634 4 56.5957 15.9278 56.5957 30.7725C56.5956 45.617 44.7633 57.5439 30.2979 57.5439C15.8324 57.5439 4.00014 45.617 4 30.7725C4 15.9278 15.8323 4.00003 30.2979 4Z"
+          stroke="black"
+          stroke-width="8"
+        />
+        <path
+          d="M48.3579 49.9009C89.5492 100.855 118.755 113.183 187 123.656"
+          stroke="black"
+          stroke-width="8"
+        />
+      </motion.g>
     </svg>
   );
 }
