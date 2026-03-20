@@ -75,21 +75,43 @@
       "role": "Full Stack Developer",
       "period": "Dec 2024 – Present",
       "summary": "Built an AI-powered productivity app from scratch and leading the full development lifecycle from architecture to production.",
-      "shadowColor": "rgba(246, 157, 200)"
+      "shadowColor": "rgba(246, 157, 200)",
+      "links": [
+        {
+          "label": "Project",
+          "href": "https://blotz-website.vercel.app/"
+        },
+        {
+          "label": "Manong",
+          "href": "https://manong-dev.vercel.app/"
+        }
+      ]
     },
     {
       "company": "Challenz",
       "role": "Software Engineer",
       "period": "Aug 2025 – Nov 2025",
       "summary": "Developed real-time video calling and automated backend workflows for a social app serving live business transactions.",
-      "shadowColor": "rgba(162, 210, 239)"
+      "shadowColor": "rgba(162, 210, 239)",
+      "links": [
+        {
+          "label": "Project",
+          "href": "https://apps.apple.com/au/app/challenz/id6741070697/"
+        }
+      ]
     },
     {
       "company": "Education Network Group",
       "role": "Game Developer",
       "period": "Nov 2024 – Mar 2025",
       "summary": "Collaborated with psychologists and designers to build WhizKid, a gamified learning app for autistic children.",
-      "shadowColor": "rgba(182, 218, 109)"
+      "shadowColor": "rgba(182, 218, 109)",
+      "links": [
+        {
+          "label": "Reference",
+          "href": "https://whizkidgames.com/"
+        }
+      ]
     }
   ]
 }
