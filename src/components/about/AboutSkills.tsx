@@ -34,10 +34,10 @@ export default function AboutSkills({
           <div
             key={group.title}
             onClick={(event) => onOpen(event, group)}
-            className={`inline-flex w-fit cursor-pointer select-none rounded-2xl border-2 border-zinc-900 bg-white px-4 py-3 transition-opacity duration-200 hover:bg-zinc-50 dark:border-zinc-100 dark:bg-zinc-950 dark:hover:bg-zinc-900 ${
+            className={`inline-flex w-fit cursor-pointer select-none rounded-2xl border-2 border-zinc-900 bg-white px-4 py-3 hover:bg-zinc-50 dark:border-zinc-100 dark:bg-zinc-950 dark:hover:bg-zinc-900 ${
               activeTitle === group.title
-                ? "pointer-events-none opacity-0"
-                : "opacity-100"
+                ? "pointer-events-none invisible"
+                : "visible"
             }`}
           >
             <p className="font-short-stack text-sm font-bold text-zinc-900 dark:text-zinc-100">
