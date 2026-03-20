@@ -29,11 +29,17 @@ export default function MemphisCard({
   }, []);
 
   const handleFlip = () => {
-    setIsFlipped(true);
-
     if (timeoutRef.current) {
       window.clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
     }
+
+    if (isFlipped) {
+      setIsFlipped(false);
+      return;
+    }
+
+    setIsFlipped(true);
 
     timeoutRef.current = window.setTimeout(() => {
       setIsFlipped(false);
