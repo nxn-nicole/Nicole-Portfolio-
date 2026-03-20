@@ -26,13 +26,13 @@ export default function AboutSection({
       <div className="mx-auto max-w-6xl rounded-[40px] px-6 py-10 sm:px-10 sm:py-14 dark:border-zinc-800">
         <div className="grid gap-12 lg:grid-cols-[280px_minmax(0,1fr)] lg:items-start">
           <div className="flex justify-center">
-            <div className="overflow-hidden rounded-full border-4 border-black bg-white p-1 dark:border-zinc-100 dark:bg-zinc-950">
+            <div className="group overflow-hidden rounded-full border-4 border-black bg-white p-1 dark:border-zinc-100 dark:bg-zinc-950">
               <Image
                 src={aboutContent.photo.src}
                 alt={aboutContent.photo.alt}
                 width={240}
                 height={240}
-                className="h-48 w-48 rounded-full object-cover sm:h-56 sm:w-56"
+                className="h-48 w-48 rounded-full object-cover transition-transform duration-300 ease-out group-hover:scale-110 sm:h-56 sm:w-56"
                 priority
               />
             </div>
