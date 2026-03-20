@@ -1,5 +1,9 @@
 import ProjectCard from "./ProjectCard";
 import RoughLine from "./RoughLine";
+import MemphisCard from "./MemphisCard";
+import BlobBlue from "./icons/BlobBlue";
+import BlobOrange from "./icons/BlobOrange";
+import BlobPurple from "./icons/BlobPurple";
 
 const projects = [
   {
@@ -29,6 +33,25 @@ export default function ProjectsSection() {
         {projects.map((project) => (
           <ProjectCard key={project.title} {...project} />
         ))}
+        <MemphisCard
+          title="AI Task Generation"
+          description="Speak or write anything — BlotzTask breaks it down into actionable tasks automatically."
+          backgroundColor="#B6DA6D"
+          illustration={<BlobBlue size={200} />}
+        />
+        <MemphisCard
+          title="AI Task Generation"
+          description="Speak or write anything — BlotzTask breaks it down into actionable tasks automatically."
+          backgroundColor="#BDD2FE"
+          illustration={<BlobOrange size={200} />}
+        />
+
+        <MemphisCard
+          title="AI Task Generation"
+          description="Speak or write anything — BlotzTask breaks it down into actionable tasks automatically."
+          backgroundColor="#C8BBD4"
+          illustration={<BlobPurple size={200} />}
+        />
       </div>
     </section>
   );
