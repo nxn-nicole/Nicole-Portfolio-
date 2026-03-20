@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import projectsContent from "./projects-content.json";
 import ProjectCard from "./ProjectCard";
 import RoughLine from "./RoughLine";
 import MemphisCard from "../MemphisCard";
@@ -8,40 +9,17 @@ import BlobBlue from "./icons/BlobBlue";
 import BlobOrange from "./icons/BlobOrange";
 import BlobPurple from "./icons/BlobPurple";
 
-const projects = [
-  {
-    title: "BlotzTask",
-    role: "Tech Lead",
-    description:
-      "A productivity app designed for people with ADHD — helping users break tasks into manageable steps and stay on track.",
-    techStack: ["React Native", "Expo", ".NET", "Azure", "Auth0"],
-    githubUrl: "https://github.com/sol-wizard/Blotz-Task-App",
-  },
-];
+const illustrations = {
+  blobBlue: <BlobBlue size={200} />,
+  blobOrange: <BlobOrange size={200} />,
+  blobPurple: <BlobPurple size={200} />,
+} as const;
 
-const memphisCards = [
-  {
-    title: "AI Task Generation",
-    description:
-      "Speak or write anything — BlotzTask breaks it down into actionable tasks automatically.",
-    backgroundColor: "#B6DA6D",
-    illustration: <BlobBlue size={200} />,
-  },
-  {
-    title: "Real-time Sync",
-    description:
-      "Stay in sync with your team — tasks update instantly across all devices.",
-    backgroundColor: "#BDD2FE",
-    illustration: <BlobOrange size={200} />,
-  },
-  {
-    title: "Smart Reminders",
-    description:
-      "Never miss a deadline — BlotzTask nudges you at just the right moment.",
-    backgroundColor: "#C8BBD4",
-    illustration: <BlobPurple size={200} />,
-  },
-];
+const projects = projectsContent.projects;
+const memphisCards = projectsContent.memphisCards.map((card) => ({
+  ...card,
+  illustration: illustrations[card.illustration as keyof typeof illustrations],
+}));
 
 // Duplicate for seamless infinite loop
 const loopedCards = [...memphisCards, ...memphisCards];
@@ -85,7 +63,7 @@ export default function ProjectsSection() {
       <div className="flex items-center justify-center gap-5 mb-16">
         <RoughLine width={60} height={18} strokeWidth={2.5} />
         <h2 className="font-dongle text-6xl font-bold tracking-widest text-zinc-900 dark:text-zinc-50">
-          Projects
+          {projectsContent.sectionTitle}
         </h2>
         <RoughLine width={60} height={18} strokeWidth={2.5} />
       </div>
@@ -101,7 +79,7 @@ export default function ProjectsSection() {
         {/* Carousel — overflow hidden kills the scrollbar */}
         <div
           className="overflow-hidden"
-          style={{ width: `${CARD_STEP * 3 + CARD_GAP}px` }}
+          style={{ width: `${CARD_STEP * 4 + CARD_GAP}px` }}
           onMouseEnter={() => {
             pausedRef.current = true;
           }}
