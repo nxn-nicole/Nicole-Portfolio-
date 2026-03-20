@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 interface MemphisCardProps {
@@ -7,7 +8,7 @@ interface MemphisCardProps {
   description: string;
   backgroundColor: string;
   illustration: React.ReactNode;
-  backIllustration: React.ReactNode;
+  backImageSrc: string;
 }
 
 export default function MemphisCard({
@@ -15,7 +16,7 @@ export default function MemphisCard({
   description,
   backgroundColor,
   illustration,
-  backIllustration,
+  backImageSrc,
 }: MemphisCardProps) {
   const [isFlipped, setIsFlipped] = useState(false);
   const timeoutRef = useRef<number | null>(null);
@@ -83,7 +84,13 @@ export default function MemphisCard({
             className="flex h-full w-full items-center justify-center rounded-3xl p-10"
             style={{ backgroundColor }}
           >
-            {backIllustration}
+            <Image
+              src={backImageSrc}
+              alt={`${title} back illustration`}
+              width={320}
+              height={320}
+              className="h-auto max-h-full w-auto max-w-full object-contain"
+            />
           </div>
         </div>
       </div>

@@ -19,8 +19,6 @@ const projects = projectsContent.projects;
 const memphisCards = projectsContent.memphisCards.map((card) => ({
   ...card,
   illustration: illustrations[card.illustration as keyof typeof illustrations],
-  backIllustration:
-    illustrations[card.backIllustration as keyof typeof illustrations],
 }));
 
 // Duplicate for seamless infinite loop
@@ -92,7 +90,7 @@ export default function ProjectsSection() {
                   description={card.description}
                   backgroundColor={card.backgroundColor}
                   illustration={card.illustration}
-                  backIllustration={card.backIllustration}
+                  backImageSrc={card.backImageSrc}
                 />
               </div>
             ))}
