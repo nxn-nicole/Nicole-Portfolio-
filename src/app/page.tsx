@@ -8,12 +8,14 @@ import {
   type SkillGroup,
 } from "@/components/about/AboutSkills";
 import ProjectsSection from "@/components/projects/ProjectsSection";
+import ConnectSection from "@/components/connect/ConnectSection";
 
 export default function Home() {
   const [selectedSkill, setSelectedSkill] = useState<SkillGroup | null>(null);
   const [originRect, setOriginRect] = useState<CardRect | null>(null);
   const [animatingSkill, setAnimatingSkill] = useState(false);
   const [isClosingSkillOverlay, setIsClosingSkillOverlay] = useState(false);
+  const [showSelectedSkillItems, setShowSelectedSkillItems] = useState(false);
 
   const handleOpenSkill = useCallback(
     (event: React.MouseEvent<HTMLDivElement>, group: SkillGroup) => {
@@ -28,10 +30,14 @@ export default function Home() {
       setSelectedSkill(group);
       setAnimatingSkill(false);
       setIsClosingSkillOverlay(false);
+      setShowSelectedSkillItems(false);
 
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
           setAnimatingSkill(true);
+          setTimeout(() => {
+            setShowSelectedSkillItems(true);
+          }, 420);
         });
       });
     },
@@ -39,14 +45,18 @@ export default function Home() {
   );
 
   const handleCloseSkill = useCallback(() => {
-    setIsClosingSkillOverlay(true);
-    setAnimatingSkill(false);
+    setShowSelectedSkillItems(false);
 
     setTimeout(() => {
-      setSelectedSkill(null);
-      setOriginRect(null);
-      setIsClosingSkillOverlay(false);
-    }, 420);
+      setIsClosingSkillOverlay(true);
+      setAnimatingSkill(false);
+
+      setTimeout(() => {
+        setSelectedSkill(null);
+        setOriginRect(null);
+        setIsClosingSkillOverlay(false);
+      }, 420);
+    }, 160);
   }, []);
 
   const originStyle: React.CSSProperties = originRect
@@ -85,10 +95,12 @@ export default function Home() {
           selectedSkill={selectedSkill}
           skillOriginRect={originRect}
           skillFlyingStyle={flyingStyle}
+          showSelectedSkillItems={showSelectedSkillItems}
           activeSkillTitle={selectedSkill?.title ?? null}
           onOpenSkill={handleOpenSkill}
         />
         <ProjectsSection />
+        <ConnectSection />
       </main>
 
       {selectedSkill ? (

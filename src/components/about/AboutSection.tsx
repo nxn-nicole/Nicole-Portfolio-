@@ -5,16 +5,20 @@ import AboutSkills, { type CardRect, type SkillGroup } from "./AboutSkills";
 import AboutExperienceCard from "./AboutExperienceCard";
 import StickyNote from "../shared/StickyNote";
 
+const skillItemRotations = [-7, -3, 2, 6, 4, -2, 5, -5];
+
 export default function AboutSection({
   selectedSkill,
   skillOriginRect,
   skillFlyingStyle,
+  showSelectedSkillItems,
   activeSkillTitle,
   onOpenSkill,
 }: {
   selectedSkill: SkillGroup | null;
   skillOriginRect: CardRect | null;
   skillFlyingStyle: React.CSSProperties;
+  showSelectedSkillItems: boolean;
   activeSkillTitle: string | null;
   onOpenSkill: (
     event: React.MouseEvent<HTMLDivElement>,
@@ -95,16 +99,47 @@ export default function AboutSection({
       </div>
 
       {selectedSkill && skillOriginRect ? (
-        <div
-          className="z-50 rounded-2xl border-2 border-zinc-900 bg-white dark:border-zinc-100 dark:bg-zinc-950"
-          style={skillFlyingStyle}
-        >
-          <div className="flex w-fit items-center justify-between px-4 pt-3 pb-2">
-            <p className="font-short-stack text-sm font-bold text-zinc-900 dark:text-zinc-100">
-              {selectedSkill.title}
-            </p>
+        <>
+          <div
+            className="z-50 rounded-2xl border-2 border-zinc-900 bg-white dark:border-zinc-100 dark:bg-zinc-950"
+            style={skillFlyingStyle}
+          >
+            <div className="flex w-fit items-center justify-between px-4 pt-3 pb-2">
+              <p className="font-short-stack text-sm font-bold text-zinc-900 dark:text-zinc-100">
+                {selectedSkill.title}
+              </p>
+            </div>
           </div>
-        </div>
+
+          {selectedSkill.items.length > 0 ? (
+            <div
+              className="fixed top-3/4 left-2/3 z-50 flex min-w-52 -translate-y-1/2 flex-col gap-2"
+              style={{ transform: "translate(calc(-50% + 150px), -50%)" }}
+            >
+              {selectedSkill.items.map((item, index) => (
+                <div
+                  key={`${selectedSkill.title}-${item}`}
+                  className="rounded-2xl border-2 border-zinc-900 bg-white px-4 py-3 font-short-stack text-sm text-zinc-900 shadow-[6px_6px_0_rgba(0,0,0,0.08)] dark:border-zinc-100 dark:bg-zinc-950 dark:text-zinc-100"
+                  style={{
+                    opacity: showSelectedSkillItems ? 1 : 0,
+                    transform: showSelectedSkillItems
+                      ? `translateX(0) translateY(${index * 6}px) rotate(${skillItemRotations[index % skillItemRotations.length]}deg)`
+                      : "translateX(-28px) translateY(12px) rotate(0deg) scale(0.96)",
+                    transformOrigin: "left center",
+                    transition:
+                      "opacity 0.28s ease, transform 0.36s cubic-bezier(0.22, 1, 0.36, 1)",
+                    transitionDelay: showSelectedSkillItems
+                      ? `${index * 90}ms`
+                      : "0ms",
+                    zIndex: selectedSkill.items.length - index,
+                  }}
+                >
+                  {item}
+                </div>
+              ))}
+            </div>
+          ) : null}
+        </>
       ) : null}
 
       <StickyNote

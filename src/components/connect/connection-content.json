@@ -1,0 +1,10 @@
+{
+  "sectionTitle": "Let's Talk",
+  "email": "nicolenxn1234@gmail.com",
+  "form": {
+    "namePlaceholder": "Your Name",
+    "emailPlaceholder": "Email Address",
+    "messagePlaceholder": "Message",
+    "submitLabel": "Send"
+  }
+}
