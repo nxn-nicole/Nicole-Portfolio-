@@ -40,7 +40,7 @@ export default function ProjectCard({
         {techStack.map((tech) => (
           <span
             key={tech}
-            className="rounded-full border border-zinc-300 dark:border-zinc-700 px-3 py-1 text-xs font-short-stack text-zinc-600 dark:text-zinc-300"
+            className="rounded-full border border-zinc-300 px-3 py-1 text-xs font-short-stack text-zinc-600 transition-transform duration-200 hover:scale-105 dark:border-zinc-700 dark:text-zinc-300"
           >
             {tech}
           </span>

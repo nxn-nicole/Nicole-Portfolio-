@@ -55,7 +55,7 @@ export default function MemphisCard({
       className="w-80 shrink-0 cursor-pointer text-left [perspective:1200px]"
     >
       <div
-        className="relative h-[35rem] rounded-3xl transition-transform duration-500 [transform-style:preserve-3d]"
+        className="relative h-140 rounded-3xl transition-transform duration-500 [transform-style:preserve-3d]"
         style={{ transform: isFlipped ? "rotateY(180deg)" : "rotateY(0deg)" }}
       >
         <div className="absolute inset-0 flex flex-col overflow-hidden rounded-3xl bg-zinc-100 [backface-visibility:hidden] dark:bg-zinc-900">
