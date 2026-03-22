@@ -1,5 +1,3 @@
-import { motion } from "framer-motion";
-
 export default function BlobOrange({ size = 160 }: { size?: number }) {
   return (
     <svg
@@ -10,20 +8,20 @@ export default function BlobOrange({ size = 160 }: { size?: number }) {
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M314.258 4.81145C364.71 -19.1187 415.629 51.8754 453.2 93.186C485.064 128.222 504.83 173.536 510.472 220.557C515.191 259.879 468.478 296.645 482.077 333.841C507.597 403.645 630.477 434.953 615.467 507.745C602.999 568.213 499.652 547.49 437.914 548.021C394.078 548.398 357.208 501.561 314.258 510.336C253.37 522.775 218.116 619.128 157.527 605.306C105.352 593.403 121.691 506.814 95.1399 460.349C68.7495 414.166 -15.201 384.035 2.40507 333.841C23.3358 274.17 114.471 282.064 168.943 249.944C193.746 235.318 220.369 221.425 235.053 196.655C270.944 136.111 250.665 34.9738 314.258 4.81145Z"
         fill="#FF8D00"
       />
       <path
         d="M373.318 85.6991L375.867 222.231L285 141.575"
         stroke="black"
-        stroke-width="8"
+        strokeWidth="8"
       />
       <path
         d="M373.318 85.6991L375.867 222.231L285 141.575"
         stroke="black"
-        stroke-width="8"
+        strokeWidth="8"
       />
       <line
         x1="320.685"
@@ -31,17 +29,17 @@ export default function BlobOrange({ size = 160 }: { size?: number }) {
         x2="374.685"
         y2="216.445"
         stroke="black"
-        stroke-width="8"
+        strokeWidth="8"
       />
       <path
         d="M446.76 520.643L420.541 386.628L524.033 450.28"
         stroke="black"
-        stroke-width="8"
+        strokeWidth="8"
       />
       <path
         d="M446.76 520.643L420.541 386.628L524.033 450.28"
         stroke="black"
-        stroke-width="8"
+        strokeWidth="8"
       />
       <line
         x1="498.115"
@@ -49,7 +47,7 @@ export default function BlobOrange({ size = 160 }: { size?: number }) {
         x2="422.709"
         y2="392.121"
         stroke="black"
-        stroke-width="8"
+        strokeWidth="8"
       />
       <line
         x1="96.4844"
@@ -57,18 +55,28 @@ export default function BlobOrange({ size = 160 }: { size?: number }) {
         x2="479.484"
         y2="325.763"
         stroke="black"
-        stroke-width="9"
+        strokeWidth="9"
       />
-
       <path
         d="M478.479 327.563C547.105 229.996 579.08 206.642 607.227 199.532"
         stroke="black"
-        stroke-width="8"
-      />
+        strokeWidth="8"
+      >
+        <animateTransform
+          attributeName="transform"
+          type="rotate"
+          values="-15 607.227 199.532;15 607.227 199.532;-15 607.227 199.532"
+          dur="1.5s"
+          repeatCount="indefinite"
+          calcMode="spline"
+          keySplines="0.45 0.05 0.55 0.95;0.45 0.05 0.55 0.95"
+          keyTimes="0;0.5;1"
+        />
+      </path>
       <path
         d="M480.941 328C591.006 373.984 630.508 376.703 658.114 367.72"
         stroke="black"
-        stroke-width="8"
+        strokeWidth="8"
       />
     </svg>
   );
