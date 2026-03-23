@@ -65,7 +65,7 @@ export default function BlobOrange({ size = 160 }: { size?: number }) {
         <animateTransform
           attributeName="transform"
           type="rotate"
-          values="-15 607.227 199.532;15 607.227 199.532;-15 607.227 199.532"
+          values="-15 478.479 327.563;15 478.479 327.563;-15 478.479 327.563"
           dur="1.5s"
           repeatCount="indefinite"
           calcMode="spline"
@@ -77,7 +77,18 @@ export default function BlobOrange({ size = 160 }: { size?: number }) {
         d="M480.941 328C591.006 373.984 630.508 376.703 658.114 367.72"
         stroke="black"
         strokeWidth="8"
-      />
+      >
+        <animateTransform
+          attributeName="transform"
+          type="rotate"
+          values="-15 480.941 328;15 480.941 328;-15 480.941 328"
+          dur="1.5s"
+          repeatCount="indefinite"
+          calcMode="spline"
+          keySplines="0.45 0.05 0.55 0.95;0.45 0.05 0.55 0.95"
+          keyTimes="0;0.5;1"
+        />
+      </path>
     </svg>
   );
 }
