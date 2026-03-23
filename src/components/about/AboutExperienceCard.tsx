@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import LinkIcon from "./LinkIcon";
 
 type ExperienceLink = {
@@ -23,7 +24,7 @@ export default function AboutExperienceCard({
   links = [],
 }: AboutExperienceCardProps) {
   return (
-    <article
+    <motion.article
       className="rounded-[28px] border-2 border-zinc-900 bg-white/90 p-6 transition-[transform,box-shadow] duration-200 ease-out hover:scale-[1.02] dark:border-zinc-100 dark:bg-zinc-950/80"
       style={{ boxShadow: `12px 12px 0 ${shadowColor}` }}
       onMouseEnter={(event) => {
@@ -32,6 +33,10 @@ export default function AboutExperienceCard({
       onMouseLeave={(event) => {
         event.currentTarget.style.boxShadow = `12px 12px 0 ${shadowColor}`;
       }}
+      initial={{ y: 30, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ type: "spring", stiffness: 200, damping: 10 }}
     >
       <div className="flex items-start justify-between gap-4">
         <div className="flex flex-col">
@@ -67,6 +72,6 @@ export default function AboutExperienceCard({
       <p className="mt-4 font-short-stack text-sm leading-7 text-zinc-600 dark:text-zinc-300">
         {summary}
       </p>
-    </article>
+    </motion.article>
   );
 }

@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { socialLinkIcons } from "./SocialLinks";
 
 type AboutLink = {
@@ -20,15 +21,27 @@ export default function AboutLinks({
         </h3>
       ) : null}
       <div className="mt-5 flex flex-wrap gap-4">
-        {links.map((link) => (
-          <a
+        {links.map((link, i) => (
+          <motion.div
             key={link.label}
-            href={link.href}
-            aria-label={link.label}
-            className="flex h-14 w-14 items-center justify-center rounded-2xl border-2 border-zinc-900 bg-white text-zinc-900 transition-transform duration-200 hover:-translate-y-1 dark:border-zinc-100 dark:bg-zinc-950 dark:text-zinc-50"
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{
+              type: "spring",
+              stiffness: 200,
+              damping: 10,
+              delay: i * 0.08,
+            }}
           >
-            {socialLinkIcons[link.label]}
-          </a>
+            <a
+              href={link.href}
+              aria-label={link.label}
+              className="flex h-14 w-14 items-center justify-center rounded-2xl border-2 border-zinc-900 bg-white text-zinc-900 transition-transform duration-200 hover:-translate-y-1 dark:border-zinc-100 dark:bg-zinc-950 dark:text-zinc-50"
+            >
+              {socialLinkIcons[link.label]}
+            </a>
+          </motion.div>
         ))}
       </div>
     </div>

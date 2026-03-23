@@ -4,6 +4,8 @@ import AboutLinks from "./AboutLinks";
 import AboutSkills, { type CardRect, type SkillGroup } from "./AboutSkills";
 import AboutExperienceCard from "./AboutExperienceCard";
 import StickyNote from "../shared/StickyNote";
+import { motion } from "framer-motion";
+import HeadLine from "./HeadLine";
 
 const skillItemRotations = [-7, -3, 2, 6, 4, -2, 5, -5];
 
@@ -29,8 +31,9 @@ export default function AboutSection({
     <section className="w-full px-6 py-24 sm:px-8">
       <div className="mx-auto max-w-6xl rounded-[40px] px-6 py-10 sm:px-10 sm:py-14 dark:border-zinc-800">
         <div className="grid gap-12 lg:grid-cols-[280px_minmax(0,1fr)] lg:items-start">
-          <div className="flex justify-center">
-            <div className="group overflow-hidden rounded-full border-4 border-black bg-white p-1 dark:border-zinc-100 dark:bg-zinc-950">
+          <div className="flex flex-col">
+            <HeadLine size={50} />
+            <div className="group w-fit rounded-full border-4 border-black bg-white p-1 dark:border-zinc-100 dark:bg-zinc-950">
               <Image
                 src={aboutContent.photo.src}
                 alt={aboutContent.photo.alt}
@@ -51,9 +54,21 @@ export default function AboutSection({
               <h2 className="font-dongle text-6xl leading-none text-zinc-900 dark:text-zinc-50 sm:text-7xl">
                 {aboutContent.title}
               </h2>
-              <p className="font-short-stack mt-4 text-lg leading-9 text-zinc-700 dark:text-zinc-300">
-                {aboutContent.summary}
-              </p>
+              <motion.div
+                initial={{ y: 20, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{
+                  type: "spring",
+                  stiffness: 200,
+                  damping: 10,
+                  delay: 0.4,
+                }}
+              >
+                <p className="font-short-stack mt-4 text-lg leading-9 text-zinc-700 dark:text-zinc-300">
+                  {aboutContent.summary}
+                </p>
+              </motion.div>
             </div>
 
             <div className="flex flex-row mt-12 gap-10 ">
@@ -69,7 +84,17 @@ export default function AboutSection({
                   activeTitle={activeSkillTitle}
                   onOpen={onOpenSkill}
                 />
-                <div>
+                <motion.div
+                  initial={{ y: 20, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 200,
+                    damping: 10,
+                    delay: 0.4,
+                  }}
+                >
                   <a
                     href={aboutContent.resume.href}
                     download
@@ -77,7 +102,7 @@ export default function AboutSection({
                   >
                     {aboutContent.resume.label}
                   </a>
-                </div>
+                </motion.div>
               </div>
 
               <div>
