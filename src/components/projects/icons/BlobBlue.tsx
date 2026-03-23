@@ -44,12 +44,12 @@ export default function BlobBlue({ size = 160 }: { size?: number }) {
           <path
             d="M30.2979 4C44.7634 4 56.5957 15.9278 56.5957 30.7725C56.5956 45.617 44.7633 57.5439 30.2979 57.5439C15.8324 57.5439 4.00014 45.617 4 30.7725C4 15.9278 15.8323 4.00003 30.2979 4Z"
             stroke="black"
-            stroke-width="8"
+            strokeWidth="8"
           />
           <path
             d="M48.3579 49.9009C89.5492 100.855 118.755 113.183 187 123.656"
             stroke="black"
-            stroke-width="8"
+            strokeWidth="8"
           />
         </motion.g>
       </g>
@@ -71,12 +71,12 @@ export default function BlobBlue({ size = 160 }: { size?: number }) {
           <path
             d="M157.208 4C142.742 4 130.91 15.9278 130.91 30.7725C130.91 45.617 142.742 57.5439 157.208 57.5439C171.673 57.5439 183.505 45.617 183.505 30.7725C183.505 15.9278 171.673 4.00003 157.208 4Z"
             stroke="black"
-            stroke-width="8"
+            strokeWidth="8"
           />
           <path
             d="M139.147 49.9009C97.9562 100.855 68.7508 113.183 0.5056 123.656"
             stroke="black"
-            stroke-width="8"
+            strokeWidth="8"
           />
         </motion.g>
       </g>
