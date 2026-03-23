@@ -1,4 +1,4 @@
-import StickyNote from "./shared/StickyNote";
+import AnimatedStickyNote from "./shared/AnimatedStickyNote";
 
 export default function HeroSection() {
   return (
@@ -9,22 +9,24 @@ export default function HeroSection() {
       <p className="font-short-stack mt-2 text-2xl text-zinc-500 dark:text-zinc-400">
         A Software Engineer
       </p>
-      <StickyNote
+      <AnimatedStickyNote
         text="Available for hiring"
         textSize={16}
         initialX={400}
         initialY={500}
         color="#b8ffbf"
         rotate={3}
+        entryRotate={40}
       />
 
-      <StickyNote
+      <AnimatedStickyNote
         text="👋"
         textSize={40}
         initialX={830}
-        initialY={340}
+        initialY={430}
         color="#FFF4B0"
         rotate={-6}
+        entryRotate={-20}
       />
     </section>
   );

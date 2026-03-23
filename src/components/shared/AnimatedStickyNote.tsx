@@ -10,6 +10,7 @@ type AnmimatedStickyNoteProps = {
   color?: string;
   rotate?: number;
   textSize?: number;
+  entryRotate?: number;
 };
 
 export default function AnimatedStickyNote({
@@ -19,6 +20,7 @@ export default function AnimatedStickyNote({
   color = "#b9f0b0",
   rotate = -2,
   textSize = 18,
+  entryRotate = -30,
 }: AnmimatedStickyNoteProps) {
   const [pos, setPos] = useState({ x: initialX, y: initialY });
   const [isDragging, setIsDragging] = useState(false);
@@ -83,7 +85,7 @@ export default function AnimatedStickyNote({
         zIndex: isDragging ? 1000 : 100,
         transformOrigin: "top left",
       }}
-      initial={{ rotate: -60 }}
+      initial={{ rotate: entryRotate }}
       animate={{ rotate: 0 }}
       transition={{ type: "spring", stiffness: 60, damping: 8, mass: 1.5 }}
     >
